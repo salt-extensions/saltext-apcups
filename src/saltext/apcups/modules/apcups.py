@@ -1,11 +1,13 @@
 """
-Module for apcupsd
+Module for apcupsd.
+
+Requires ``apcaccess`` in ``$PATH``.
 """
 
 import logging
 
-import salt.utils.decorators as decorators
 import salt.utils.path
+from salt.utils import decorators
 
 log = logging.getLogger(__name__)
 
@@ -22,16 +24,11 @@ def _check_apcaccess():
 
 
 def __virtual__():
-    """
-    Provides apcupsd only if apcaccess is present
-    """
     if _check_apcaccess():
         return __virtualname__
     return (
         False,
-        "{} module can only be loaded on when apcupsd is installed".format(
-            __virtualname__
-        ),
+        f"{__virtualname__} module can only be loaded on when apcupsd is installed",
     )
 
 
