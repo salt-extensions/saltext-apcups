@@ -1,5 +1,5 @@
-``saltext-apcups``: Integrate Salt with Apcups
-==============================================
+``saltext-apcups``: Integrate Salt with APC UPS
+===============================================
 
 Salt Extension for interacting with APC UPS
 
